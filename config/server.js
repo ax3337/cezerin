@@ -30,11 +30,11 @@ module.exports = {
 	mongodbServerUrl: dbUrl,
 
 	smtpServer: {
-		host: '',
-		port: 0,
+		host: 'email-smtp.us-west-2.amazonaws.com',
+		port: 25,
 		secure: true,
-		user: '',
-		pass: '',
+		user: 'AKIAI3WRGJJPXZ3WPUXQ',
+		pass: 'Aoiw4TTPMAwQZ8jJ5GRDHyepkzV1pHaNtRn3I9bPgknL',
 		fromName: '',
 		fromAddress: ''
 	},
@@ -58,7 +58,7 @@ module.exports = {
 	themeAssetsUploadUrl: '/assets/images',
 
 	// store UI language
-	language: 'en',
+	language: 'ru',
 
 	// used by API
 	orderStartNumber: 1000,
