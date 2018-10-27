@@ -2,6 +2,7 @@ import React from 'react';
 import messages from 'lib/text';
 import api from 'lib/api';
 import BarChart from './barChart';
+import LineChart from './lineChart';
 import * as utils from './utils';
 import moment from 'moment';
 
@@ -56,6 +57,11 @@ export default class OrdersBar extends React.Component {
 					data={salesData}
 					legendDisplay={false}
 					title={messages.salesReport}
+				/>
+				<LineChart
+					data={ordersData}
+					legendDisplay={true}
+					title={messages.drawer_orders}
 				/>
 			</div>
 		);

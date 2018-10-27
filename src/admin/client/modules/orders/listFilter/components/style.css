@@ -1,5 +1,8 @@
 .filter {
   padding: 0 16px;
+  display: flex;
 }
 
-.select {}
+.select {
+  margin: 16px;
+}

@@ -32,29 +32,34 @@ const menuItems = [
 		icon: 'person'
 	},
 	{
-		title: messages.settings_pages,
-		url: '/admin/pages',
-		icon: 'description'
+		title: 'Пользователи',
+		url: '/admin/users',
+		icon: 'person'
 	},
-	{
-		title: messages.files,
-		url: '/admin/files',
-		icon: 'folder'
-	},
+	// {
+	// 	title: messages.settings_pages,
+	// 	url: '/admin/pages',
+	// 	icon: 'description'
+	// },
+	// {
+	// 	title: messages.files,
+	// 	url: '/admin/files',
+	// 	icon: 'folder'
+	// },
 	{
 		title: '-',
 		url: 'settings'
 	},
-	{
-		title: messages.drawer_settings,
-		url: '/admin/settings',
-		icon: 'settings'
-	},
-	{
-		title: messages.apps,
-		url: '/admin/apps',
-		icon: 'apps'
-	},
+	// {
+	// 	title: messages.drawer_settings,
+	// 	url: '/admin/settings',
+	// 	icon: 'settings'
+	// },
+	// {
+	// 	title: messages.apps,
+	// 	url: '/admin/apps',
+	// 	icon: 'apps'
+	// },
 	{
 		title: messages.drawer_logout,
 		url: '/admin/logout',
