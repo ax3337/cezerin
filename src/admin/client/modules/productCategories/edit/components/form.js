@@ -16,7 +16,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 const validate = values => {
 	const errors = {};
-	const requiredFields = ['name'];
+	const requiredFields = ['name', 'opt1', 'opt2', 'vip'];
 	const numberFields = ['opt1', 'opt2', 'vip'];
 
 	requiredFields.forEach(field => {
@@ -96,18 +96,21 @@ const ProductCategoryEditForm = ({
 						/>
 						<Field
 							name="opt1"
+							type="number"
 							component={TextField}
 							floatingLabelText="ОПТ 1"
 							fullWidth={true}
 						/>
 						<Field
 							name="opt2"
+							type="number"
 							component={TextField}
 							floatingLabelText="ОПТ 2"
 							fullWidth={true}
 						/>
 						<Field
 							name="vip"
+							type="number"
 							component={TextField}
 							floatingLabelText="VIP"
 							fullWidth={true}
