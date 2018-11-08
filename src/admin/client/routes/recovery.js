@@ -4,21 +4,11 @@ import CezerinClient from 'cezerin-client';
 import settings from 'lib/settings';
 import * as auth from 'lib/auth';
 
-import { Link } from 'react-router-dom';
-
 import RaisedButton from 'material-ui/RaisedButton';
-import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
-import Input from '@material-ui/core/Input';
-import InputLabel from '@material-ui/core/InputLabel';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import IconButton from '@material-ui/core/IconButton';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
-export default class LoginForm extends React.Component {
+export default class RecoveryForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -29,10 +19,6 @@ export default class LoginForm extends React.Component {
 			error: null
 		};
 	}
-
-	handleClickShowPassword = () => {
-		this.setState(state => ({ showPassword: !state.showPassword }));
-	};
 
 	handleChange = event => {
 		this.setState({
@@ -73,20 +59,13 @@ export default class LoginForm extends React.Component {
 			});
 	};
 
-	componentWillMount() {
-		auth.checkTokenFromUrl();
-	}
+	// componentWillMount() {
+	// 	auth.checkTokenFromUrl();
+	// }
 	componentDidMount() {}
 
 	render() {
-		const {
-			email,
-			isFetching,
-			password,
-			isAuthorized,
-			emailIsSent,
-			error
-		} = this.state;
+		const { email, isFetching, isAuthorized, emailIsSent, error } = this.state;
 
 		let response = null;
 		if (isFetching) {
@@ -95,7 +74,7 @@ export default class LoginForm extends React.Component {
 			);
 		} else if (emailIsSent) {
 			response = (
-				<div className="loginSuccessResponse">{messages.loginLinkSent}</div>
+				<div className="loginSuccessResponse">{messages.recoveryLinkSent}</div>
 			);
 		} else if (emailIsSent === false && error) {
 			response = <div className="loginErrorResponse">{error}</div>;
@@ -105,8 +84,10 @@ export default class LoginForm extends React.Component {
 			<div className="row col-full-height center-xs middle-xs">
 				<div className="col-xs-12 col-sm-8 col-md-6 col-lg-4">
 					<Paper className="loginBox" elevation={1}>
-						<div className="loginTitle">{messages.loginTitle}</div>
-						<div className="loginDescription">{messages.loginDescription}</div>
+						<div className="loginTitle">{messages.recoveryTitle}</div>
+						<div className="loginDescription">
+							{messages.recoveryDescription}
+						</div>
 						<div className="loginInput">
 							<TextField
 								type="email"
@@ -117,38 +98,14 @@ export default class LoginForm extends React.Component {
 								fullWidth
 								hintText={messages.email}
 							/>
-							<FormControl fullWidth>
-								<InputLabel htmlFor="adornment-password">Password</InputLabel>
-								<Input
-									type={this.state.showPassword ? 'text' : 'password'}
-									id="adornment-password"
-									endAdornment={
-										<InputAdornment position="end">
-											<IconButton
-												aria-label="Toggle password visibility"
-												onClick={this.handleClickShowPassword}
-											>
-												{this.state.showPassword ? (
-													<Visibility />
-												) : (
-													<VisibilityOff />
-												)}
-											</IconButton>
-										</InputAdornment>
-									}
-								/>
-							</FormControl>
 							<br />
 						</div>
 						<RaisedButton
-							label={messages.loginButton}
+							label={messages.recoveryButton}
 							primary={true}
 							disabled={isFetching || emailIsSent}
 							onClick={this.handleSubmit}
 						/>
-						<Button>
-							<Link to="/admin/recovery">{messages.recoveryPassword}</Link>
-						</Button>
 						{response}
 					</Paper>
 				</div>
