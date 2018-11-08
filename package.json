@@ -50,7 +50,8 @@
     "precommit": "lint-staged",
     "start-api": "node -r esm src/api/server/index.js",
     "start-store": "node -r esm dist/store/server/index.js",
-    "start": "concurrently npm:start-*"
+    "start": "concurrently npm:start-*",
+    "restart": "pm2 kill && npm run build && pm2 start process.json"
   },
   "lint-staged": {
     "*.js": [
@@ -59,6 +60,8 @@
     ]
   },
   "dependencies": {
+    "@material-ui/core": "^3.4.0",
+    "@material-ui/icons": "^3.0.1",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.6",
