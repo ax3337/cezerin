@@ -185,6 +185,8 @@ class CustomersService {
 		};
 
 		customer.note = parse.getString(data.note);
+		customer.role = parse.getString(data.role).toLowerCase();
+		customer.password = parse.getString(data.password).toLowerCase();
 		customer.email = parse.getString(data.email).toLowerCase();
 		customer.mobile = parse.getString(data.mobile).toLowerCase();
 		customer.full_name = parse.getString(data.full_name);
@@ -222,6 +224,14 @@ class CustomersService {
 
 		if (data.note !== undefined) {
 			customer.note = parse.getString(data.note);
+		}
+
+		if (data.role !== undefined) {
+			customer.role = parse.getString(data.role);
+		}
+
+		if (data.password !== undefined) {
+			customer.password = parse.getString(data.password);
 		}
 
 		if (data.email !== undefined) {
