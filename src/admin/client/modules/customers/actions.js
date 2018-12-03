@@ -218,6 +218,17 @@ export function updateCustomer(data) {
 	};
 }
 
+export function createCustomer(data) {
+	return (dispatch, getState) => {
+		return api.customers
+			.create(data)
+			.then(customerResponse => {
+				dispatch(receiveCustomer(customerResponse.json));
+			})
+			.catch(error => {});
+	};
+}
+
 export function fetchCustomer(customerId) {
 	return (dispatch, getState) => {
 		dispatch(requestCustomer());

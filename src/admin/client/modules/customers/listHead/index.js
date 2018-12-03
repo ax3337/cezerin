@@ -4,7 +4,8 @@ import {
 	fetchCustomers,
 	deleteCustomers,
 	setGroup,
-	setFilterSearch
+	setFilterSearch,
+	createCustomer
 } from '../actions';
 import Buttons from './components/buttons';
 
@@ -26,6 +27,21 @@ const mapDispatchToProps = dispatch => {
 		},
 		onSetGroup: group_id => {
 			dispatch(setGroup(group_id));
+		},
+		onCustomerCreate: customer => {
+			dispatch(
+				createCustomer({
+					role: 'manager',
+					note: customer.note,
+					full_name: customer.full_name,
+					group_id: customer.group_id,
+					email: customer.email,
+					mobile: customer.mobile
+				})
+			).then(function(value) {
+				dispatch(fetchCustomers());
+				console.log(value);
+			});
 		}
 	};
 };
