@@ -32,8 +32,8 @@ const menuItems = [
 		icon: 'person'
 	},
 	{
-		title: 'Пользователи',
-		url: '/admin/users',
+		title: messages.drawer_managers,
+		url: '/admin/managers',
 		icon: 'person'
 	},
 	// {

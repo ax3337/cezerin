@@ -13,6 +13,9 @@ import ProductCategories from 'routes/products/categories';
 import Customers from 'routes/customers';
 import CustomerDetails from 'routes/customers/edit';
 import CustomerGroups from 'routes/customers/groups';
+import Managers from 'routes/managers';
+import ManagerDetails from 'routes/managers/edit';
+import ManagerGroups from 'routes/managers/groups';
 import Orders from 'routes/orders';
 import OrderDetails from 'routes/orders/edit';
 import OrderStatuses from 'routes/orders/statuses';
@@ -95,6 +98,17 @@ export default () => (
 							path="/admin/customer/:customerId"
 							exact
 							component={CustomerDetails}
+						/>
+						<Route path="/admin/managers" exact component={Managers} />
+						<Route
+							path="/admin/managers/groups"
+							exact
+							component={ManagerGroups}
+						/>
+						<Route
+							path="/admin/manager/:customerId"
+							exact
+							component={ManagerDetails}
 						/>
 						<Route
 							path="/admin/product/:productId"
