@@ -53,6 +53,7 @@ export default class AppBarTop extends React.Component {
 		if (
 			pathname === '/admin/login' ||
 			pathname === '/admin/logout' ||
+			pathname === '/admin/registration' ||
 			pathname === '/admin/recovery'
 		) {
 			return null;

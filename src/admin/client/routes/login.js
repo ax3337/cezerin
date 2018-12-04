@@ -146,14 +146,19 @@ export default class LoginForm extends React.Component {
 							</FormControl>
 							<br />
 						</div>
-						<RaisedButton
-							label={messages.loginButton}
-							primary={true}
-							disabled={isFetching || emailIsSent}
-							onClick={this.handleSubmit}
-						/>
+						<div>
+							<RaisedButton
+								label={messages.loginButton}
+								primary={true}
+								disabled={isFetching || emailIsSent}
+								onClick={this.handleSubmit}
+							/>
+							<Button>
+								<Link to="/admin/recovery">{messages.recoveryPassword}</Link>
+							</Button>
+						</div>
 						<Button>
-							<Link to="/admin/recovery">{messages.recoveryPassword}</Link>
+							<Link to="/admin/registration">{messages.registrationTitle}</Link>
 						</Button>
 						{response}
 					</Paper>

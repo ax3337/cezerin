@@ -110,9 +110,9 @@ export default class LoginForm extends React.Component {
 			<div className="row col-full-height center-xs middle-xs">
 				<div className="col-xs-12 col-sm-8 col-md-6 col-lg-4">
 					<Paper className="loginBox" elevation={1}>
-						<div className="loginTitle">{messages.registerTitle}</div>
+						<div className="loginTitle">{messages.registrationTitle}</div>
 						<div className="loginDescription">
-							{messages.registerDescription}
+							{messages.registrationDescription}
 						</div>
 						<div className="loginInput">
 							<TextField

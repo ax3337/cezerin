@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Head from 'modules/head';
 import Login from 'routes/login';
 import Logout from 'routes/logout';
-import Register from 'routes/register';
+import Registration from 'routes/registration';
 import Recovery from 'routes/recovery';
 import Home from 'routes/home';
 import NotFound from 'routes/notFound';
@@ -70,7 +70,7 @@ export default () => (
 					<Switch>
 						<Route path="/admin/" exact component={Home} />
 						<Route path="/admin/login" component={Login} />
-						<Route path="/admin/register" component={Register} />
+						<Route path="/admin/registration" component={Registration} />
 						<Route path="/admin/recovery" component={Recovery} />
 						<Route path="/admin/logout" component={Logout} />
 						<Route path="/admin/products" exact component={Products} />
