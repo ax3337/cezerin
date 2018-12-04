@@ -3,12 +3,14 @@ import { NavLink } from 'react-router-dom';
 import messages from 'lib/text';
 
 import Divider from 'material-ui/Divider';
-import FontIcon from 'material-ui/FontIcon';
 import Drawer from 'material-ui/Drawer';
 import Menu from 'material-ui/Menu';
 import MenuItem from 'material-ui/MenuItem';
 import AppBar from 'material-ui/AppBar';
-import IconButton from 'material-ui/IconButton';
+// import IconButton from 'material-ui/IconButton';
+// import FontIcon from 'material-ui/FontIcon';
+import IconButton from '@material-ui/core/IconButton';
+import Icon from '@material-ui/core/Icon';
 
 const menuItems = [
 	{
@@ -29,7 +31,7 @@ const menuItems = [
 	{
 		title: messages.drawer_customers,
 		url: '/admin/customers',
-		icon: 'person'
+		icon: 'people'
 	},
 	{
 		title: messages.drawer_managers,
@@ -126,14 +128,14 @@ const DrawerMenu = ({ open, onClose, currentUrl }) => {
 						innerDivStyle={styles.itemInnerDiv}
 						style={styles.item}
 						leftIcon={
-							<FontIcon
+							<Icon
 								style={
 									item.url === currentUrl ? styles.iconActive : styles.icon
 								}
 								className="material-icons"
 							>
 								{item.icon}
-							</FontIcon>
+							</Icon>
 						}
 					/>
 				</NavLink>
@@ -149,9 +151,7 @@ const DrawerMenu = ({ open, onClose, currentUrl }) => {
 				zDepth={0}
 				iconElementLeft={
 					<IconButton onClick={onClose}>
-						<FontIcon color="#9e9e9e" className="material-icons">
-							menu
-						</FontIcon>
+						<Icon className="material-icons">menu</Icon>
 					</IconButton>
 				}
 			/>

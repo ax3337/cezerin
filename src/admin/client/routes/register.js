@@ -110,8 +110,10 @@ export default class LoginForm extends React.Component {
 			<div className="row col-full-height center-xs middle-xs">
 				<div className="col-xs-12 col-sm-8 col-md-6 col-lg-4">
 					<Paper className="loginBox" elevation={1}>
-						<div className="loginTitle">{messages.loginTitle}</div>
-						<div className="loginDescription">{messages.loginDescription}</div>
+						<div className="loginTitle">{messages.registerTitle}</div>
+						<div className="loginDescription">
+							{messages.registerDescription}
+						</div>
 						<div className="loginInput">
 							<TextField
 								type="email"
@@ -153,7 +155,7 @@ export default class LoginForm extends React.Component {
 							onClick={this.handleSubmit}
 						/>
 						<Button>
-							<Link to="/admin/recovery">{messages.recoveryPassword}</Link>
+							<Link to="/admin/login">{messages.loginTitle}</Link>
 						</Button>
 						{response}
 					</Paper>

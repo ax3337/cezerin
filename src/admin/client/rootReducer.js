@@ -5,6 +5,8 @@ import productCategories from 'modules/productCategories/reducer';
 import products from 'modules/products/reducer';
 import customerGroups from 'modules/customerGroups/reducer';
 import customers from 'modules/customers/reducer';
+import managerGroups from 'modules/managerGroups/reducer';
+import managers from 'modules/managers/reducer';
 import orders from 'modules/orders/reducer';
 import orderStatuses from 'modules/orderStatuses/reducer';
 import pages from 'modules/pages/reducer';
@@ -19,6 +21,8 @@ export default combineReducers({
 	settings,
 	customerGroups,
 	customers,
+	managers,
+	managerGroups,
 	orders,
 	orderStatuses,
 	pages,
