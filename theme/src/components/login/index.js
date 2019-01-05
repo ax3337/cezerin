@@ -39,13 +39,6 @@ export default class LoginForm extends React.Component {
 		} = this.props.state;
 
 		if (this.props.state.customerproperties !== undefined) {
-			console.log('customerproperties2');
-			console.log(this.props.state.customerproperties);
-			if (this.props.state.customerproperties.authenticated) {
-				const expiryMilliseconds = 1000; //time units is seconds
-				console.log('customerproperties1');
-				console.log(this.props.state.customerproperties);
-			}
 			if (this.props.state.customerproperties.authenticated) {
 				const expiryMilliseconds = 1000; //time units is seconds
 				Lscache.setExpiryMilliseconds(expiryMilliseconds);
