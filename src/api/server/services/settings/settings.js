@@ -23,7 +23,7 @@ class SettingsService {
 			timezone: 'Asia/Singapore',
 			date_format: 'MMMM D, YYYY',
 			time_format: 'h:mm a',
-			default_shipping_country: 'SG',
+			default_shipping_country: '',
 			default_shipping_state: '',
 			default_shipping_city: '',
 			default_product_sorting: 'stock_status,price,position',

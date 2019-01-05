@@ -22,7 +22,7 @@ export default ({
 		<div className={style.filter}>
 			<SelectField
 				className={style.select}
-				fullWidth={false}
+				fullWidth={true}
 				value={isDraft}
 				onChange={(event, index, value) => {
 					setDraft(value);
@@ -36,7 +36,7 @@ export default ({
 
 			<SelectField
 				className={style.select}
-				fullWidth={false}
+				fullWidth={true}
 				value={isHold}
 				onChange={(event, index, value) => {
 					setHold(value);
@@ -50,7 +50,7 @@ export default ({
 
 			<SelectField
 				className={style.select}
-				fullWidth={false}
+				fullWidth={true}
 				value={isPaid}
 				onChange={(event, index, value) => {
 					setPaid(value);
@@ -64,7 +64,7 @@ export default ({
 
 			<SelectField
 				className={style.select}
-				fullWidth={false}
+				fullWidth={true}
 				value={isDelivered}
 				onChange={(event, index, value) => {
 					setDelivered(value);
@@ -78,7 +78,7 @@ export default ({
 
 			<SelectField
 				className={style.select}
-				fullWidth={false}
+				fullWidth={true}
 				value={isCancelled}
 				onChange={(event, index, value) => {
 					setCancelled(value);
@@ -92,7 +92,7 @@ export default ({
 
 			<SelectField
 				className={style.select}
-				fullWidth={false}
+				fullWidth={true}
 				value={isClosed}
 				onChange={(event, index, value) => {
 					setClosed(value);

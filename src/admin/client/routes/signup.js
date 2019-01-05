@@ -18,7 +18,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 
-export default class LoginForm extends React.Component {
+export default class SignupForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -110,10 +110,8 @@ export default class LoginForm extends React.Component {
 			<div className="row col-full-height center-xs middle-xs">
 				<div className="col-xs-12 col-sm-8 col-md-6 col-lg-4">
 					<Paper className="loginBox" elevation={1}>
-						<div className="loginTitle">{messages.registrationTitle}</div>
-						<div className="loginDescription">
-							{messages.registrationDescription}
-						</div>
+						<div className="loginTitle">{messages.signupTitle}</div>
+						<div className="loginDescription">{messages.signupDescription}</div>
 						<div className="loginInput">
 							<TextField
 								type="email"

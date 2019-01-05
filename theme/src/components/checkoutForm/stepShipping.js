@@ -71,6 +71,8 @@ class CheckoutStepShipping extends React.Component {
 			onEdit
 		} = this.props;
 
+		console.log(this.props.initialValues);
+
 		const hideBillingAddress = settings.hide_billing_address === true;
 		const commentsField = checkoutFields.find(f => f.name === 'comments');
 		const commentsFieldPlaceholder =
@@ -273,7 +275,13 @@ class CheckoutStepShipping extends React.Component {
 						<div className="checkout-button-wrap">
 							<button
 								type="submit"
-								disabled={submitting || processingCheckout || invalid}
+								disabled={
+									submitting ||
+									processingCheckout ||
+									invalid ||
+									initialValues.shipping_method_id === null ||
+									initialValues.payment_method_id === null
+								}
 								className={`${buttonClassName}${
 									processingCheckout ? ' is-loading' : ''
 								}`}

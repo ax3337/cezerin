@@ -50,6 +50,30 @@ const addAllPages = async db => {
 		enabled: true,
 		is_system: false
 	});
+	await addPage(db, {
+		slug: 'login',
+		meta_title: 'Login or Register',
+		enabled: true,
+		is_system: true
+	});
+	await addPage(db, {
+		slug: 'register',
+		meta_title: 'Login or Register',
+		enabled: true,
+		is_system: true
+	});
+	await addPage(db, {
+		slug: 'customer-account',
+		meta_title: 'Customer Account',
+		enabled: true,
+		is_system: true
+	});
+	await addPage(db, {
+		slug: 'forgot-password',
+		meta_title: 'Forgot Password',
+		enabled: true,
+		is_system: true
+	});
 };
 
 const addAllProducts = async db => {
@@ -310,8 +334,11 @@ const createAllIndexes = async db => {
 
 	if (customersIndexes.length === 1) {
 		await createIndex(db, 'customers', { group_id: 1 });
-		await createIndex(db, 'customers', { email: 1 });
+		await createIndex(db, 'customers', { email: 1 }, { unique: true });
 		await createIndex(db, 'customers', { mobile: 1 });
+		await createIndex(db, 'customers', { first_name: 1 });
+		await createIndex(db, 'customers', { last_name: 1 });
+		await createIndex(db, 'customers', { password: 1 });
 		await createIndex(
 			db,
 			'customers',
@@ -335,6 +362,9 @@ const createAllIndexes = async db => {
 		await createIndex(db, 'orders', { customer_id: 1 });
 		await createIndex(db, 'orders', { email: 1 });
 		await createIndex(db, 'orders', { mobile: 1 });
+		await createIndex(db, 'orders', { first_name: 1 });
+		await createIndex(db, 'orders', { last_name: 1 });
+		await createIndex(db, 'orders', { password: 1 });
 		await createIndex(
 			db,
 			'orders',

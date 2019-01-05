@@ -174,6 +174,8 @@ const getFilter = (state, offset = 0) => {
 	const searchTerm = state.products.filter.search;
 	const sortOrder = searchTerm && searchTerm.length > 0 ? 'search' : 'name';
 
+	console.log(searchTerm);
+
 	let filter = {
 		limit: 50,
 		fields:
@@ -330,6 +332,8 @@ export function createProduct(history) {
 			enabled: false,
 			category_id: state.productCategories.selectedId
 		};
+
+		console.log(state.productCategories.selectedId);
 
 		return api.products
 			.create(productDraft)
