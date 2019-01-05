@@ -3,7 +3,6 @@
 	"extends": ["airbnb", "prettier", "prettier/react"],
 	"plugins": ["react", "prettier", "jsx-a11y", "import"],
 	"parserOptions": {
-		"ecmaVersion": 2018,
 		"sourceType": "module",
 		"ecmaFeatures": {
 			"jsx": true
@@ -15,12 +14,12 @@
 		"node": true
 	},
 	"rules": {
-		/* "eslint linebreak-style": [1, "error", "unix"], */
-		"linebreak-style": 0,
-		"prettier/prettier": ["error", { "singleQuote": true }],
-		"react/jsx-filename-extension": "off",
-		"import/newline-after-import": 0,
-		"class-methods-use-this": 0,
-		"no-console": "off"
+		"no-const-assign": "warn",
+		"no-this-before-super": "warn",
+		"no-undef": "warn",
+		"no-unreachable": "warn",
+		"no-unused-vars": "warn",
+		"constructor-super": "warn",
+		"valid-typeof": "warn"
 	}
 }

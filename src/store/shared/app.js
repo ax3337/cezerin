@@ -13,6 +13,10 @@ import CheckoutContainer from './containers/checkout';
 import CheckoutSuccessContainer from './containers/checkoutSuccess';
 import NotFoundContainer from './containers/notfound';
 import SearchContainer from './containers/search';
+import LoginContainer from './containers/login';
+import RegisterContainer from './containers/register';
+import AccountContainer from './containers/account';
+import ForgotPasswordContainer from './containers/forgotPassword';
 
 import { setCurrentPage } from './actions';
 import { PAGE, PRODUCT_CATEGORY, PRODUCT, RESERVED, SEARCH } from './pageTypes';
@@ -46,7 +50,7 @@ class SwitchContainers extends React.Component {
 		const { history, location, currentPage } = this.props;
 		const locationPathname =
 			location && location.pathname ? location.pathname : '/';
-
+		console.log(currentPage.type, locationPathname);
 		switch (currentPage.type) {
 			case PRODUCT:
 				return <ProductContainer />;
@@ -55,6 +59,18 @@ class SwitchContainers extends React.Component {
 			case SEARCH:
 				return <SearchContainer />;
 			case PAGE:
+				if (locationPathname === '/login') {
+					return <LoginContainer />;
+				}
+				if (locationPathname === '/register') {
+					return <RegisterContainer />;
+				}
+				if (locationPathname === '/customer-account') {
+					return <AccountContainer />;
+				}
+				if (locationPathname === '/forgot-password') {
+					return <ForgotPasswordContainer />;
+				}
 				if (locationPathname === '/') {
 					return <IndexContainer />;
 				} else if (locationPathname === '/checkout') {

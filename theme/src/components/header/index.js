@@ -1,8 +1,10 @@
 import React, { Fragment } from 'react';
 import { NavLink } from 'react-router-dom';
+import Lscache from 'lscache';
 import { themeSettings, text } from '../../lib/settings';
 import Cart from './cart';
 import CartIndicator from './cartIndicator';
+import Login from './login';
 import SearchBox from './searchBox';
 import HeadMenu from './headMenu';
 
@@ -85,6 +87,16 @@ export default class Header extends React.Component {
 			cartIsActive: !this.state.cartIsActive,
 			mobileMenuIsActive: false
 		});
+
+		if (
+			this.props.state.cart &&
+			this.props.state.cart.items &&
+			this.props.state.cart.items.length > 0
+		) {
+			this.props.cartLayerInitialized({
+				cartlayerBtnInitialized: true
+			});
+		}
 		document.body.classList.toggle('noscroll');
 	};
 
@@ -94,6 +106,21 @@ export default class Header extends React.Component {
 			mobileMenuIsActive: false
 		});
 		document.body.classList.add('noscroll');
+	};
+
+	handleLogin = () => {
+		Lscache.flushExpired();
+		if (Lscache.get('auth_data') === null) {
+			this.props.loggedinUserTimeUp({
+				authenticated: false
+			});
+			this.props.setLocation('/login');
+		} else {
+			this.props.customerData({
+				token: Lscache.get('auth_data')
+			});
+			this.props.setLocation('/customer-account');
+		}
 	};
 
 	handleSearch = search => {
@@ -118,8 +145,10 @@ export default class Header extends React.Component {
 			settings,
 			currentPage,
 			location,
-			productFilter
+			productFilter,
+			cartlayerBtnInitialized
 		} = this.props.state;
+
 		const classToggle = this.state.mobileMenuIsActive
 			? 'navbar-burger is-hidden-tablet is-active'
 			: 'navbar-burger is-hidden-tablet';
@@ -133,7 +162,7 @@ export default class Header extends React.Component {
 				>
 					<div className="container">
 						<div className="columns is-gapless is-mobile header-container">
-							<div className="column is-4">
+							<div className="column is-4 column-burger">
 								{!showBackButton && (
 									<BurgerButton
 										onClick={this.menuToggle}
@@ -143,9 +172,10 @@ export default class Header extends React.Component {
 								{showBackButton && <BackButton onClick={this.handleGoBack} />}
 							</div>
 
-							<div className="column is-4 has-text-centered">
+							<div className="column is-4 has-text-centered column-logo">
 								<Logo src={settings.logo} onClick={this.closeAll} alt="logo" />
 							</div>
+
 							<div className="column is-4 has-text-right header-block-right">
 								<span
 									className="icon icon-search is-hidden-tablet"
@@ -158,18 +188,13 @@ export default class Header extends React.Component {
 										style={{ minWidth: 24 }}
 									/>
 								</span>
-								<SearchBox
-									value={productFilter.search}
-									onSearch={this.handleSearch}
-									className={
-										this.state.mobileSearchIsActive ? 'search-active' : ''
-									}
-								/>
 
+								<Login onClick={this.handleLogin} />
 								<CartIndicator
 									cart={cart}
 									onClick={this.cartToggle}
 									cartIsActive={this.state.cartIsActive}
+									cartlayerBtnInitialized={cartlayerBtnInitialized}
 								/>
 								<div
 									className={this.state.cartIsActive ? 'mini-cart-open' : ''}
@@ -179,9 +204,20 @@ export default class Header extends React.Component {
 										deleteCartItem={this.props.deleteCartItem}
 										settings={settings}
 										cartToggle={this.cartToggle}
+										cartlayerBtnInitialized={cartlayerBtnInitialized}
 									/>
 								</div>
 							</div>
+						</div>
+
+						<div className="primary-nav is-hidden-mobile">
+							<SearchBox
+								value={productFilter.search}
+								onSearch={this.handleSearch}
+								className={
+									this.state.mobileSearchIsActive ? 'search-active' : ''
+								}
+							/>
 						</div>
 
 						<div className="primary-nav is-hidden-mobile">

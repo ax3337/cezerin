@@ -18,52 +18,51 @@ const Filter = ({
 	return (
 		<div className={style.filter}>
 			<SelectField
-				className={style.selectFieldFilter}
 				value={enabled}
 				onChange={(event, index, value) => {
 					setEnabled(value);
 				}}
 				floatingLabelText={messages.enabled}
-				fullWidth={false}
+				fullWidth={true}
 			>
 				<MenuItem value={null} primaryText={messages.all} label=" " />
 				<MenuItem value={false} primaryText={messages.no} />
 				<MenuItem value={true} primaryText={messages.yes} />
 			</SelectField>
+
 			<SelectField
-				className={style.selectFieldFilter}
 				value={discontinued}
 				onChange={(event, index, value) => {
 					setDiscontinued(value);
 				}}
 				floatingLabelText={messages.products_discontinued}
-				fullWidth={false}
+				fullWidth={true}
 			>
 				<MenuItem value={null} primaryText={messages.all} label=" " />
 				<MenuItem value={false} primaryText={messages.no} />
 				<MenuItem value={true} primaryText={messages.yes} />
 			</SelectField>
+
 			<SelectField
-				className={style.selectFieldFilter}
 				value={onSale}
 				onChange={(event, index, value) => {
 					setOnSale(value);
 				}}
 				floatingLabelText={messages.products_onSale}
-				fullWidth={false}
+				fullWidth={true}
 			>
 				<MenuItem value={null} primaryText={messages.all} label=" " />
 				<MenuItem value={false} primaryText={messages.no} />
 				<MenuItem value={true} primaryText={messages.yes} />
 			</SelectField>
+
 			<SelectField
-				className={style.selectFieldFilter}
 				value={stockStatus}
 				onChange={(event, index, value) => {
 					setStock(value);
 				}}
 				floatingLabelText={messages.products_stockStatus}
-				fullWidth={false}
+				fullWidth={true}
 			>
 				<MenuItem value={null} primaryText={messages.all} label=" " />
 				<MenuItem value={'available'} primaryText={messages.products_inStock} />

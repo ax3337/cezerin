@@ -18,7 +18,7 @@ module.exports = {
 	ajaxBaseUrl: `http://localhost:3001/ajax`,
 
 	// Access-Control-Allow-Origin
-	storeBaseUrl: 'http://localhost:3000',
+	storeBaseUrl: '*',
 
 	// used by API
 	adminLoginUrl: '/admin/login',
@@ -30,20 +30,20 @@ module.exports = {
 	mongodbServerUrl: dbUrl,
 
 	smtpServer: {
-		host: 'email-smtp.us-west-2.amazonaws.com',
-		port: 25,
+		host: '',
+		port: 0,
 		secure: true,
-		user: 'AKIAI3WRGJJPXZ3WPUXQ',
-		pass: 'Aoiw4TTPMAwQZ8jJ5GRDHyepkzV1pHaNtRn3I9bPgknL',
+		user: '',
+		pass: '',
 		fromName: '',
 		fromAddress: ''
 	},
 
 	// key to sign tokens
-	jwtSecretKey: '-',
+	jwtSecretKey: 'SP69kXFR3znRi7kL8Max2GTB24wOtEQj',
 
 	// key to sign store cookies
-	cookieSecretKey: '-',
+	cookieSecretKey: '8669X9P5yI1DAEthy1chc3M9EncyS7SM',
 
 	// path to uploads
 	categoriesUploadPath: 'public/content/images/categories',

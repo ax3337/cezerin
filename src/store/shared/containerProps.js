@@ -9,7 +9,13 @@ import {
 	fetchShippingMethods,
 	fetchPaymentMethods,
 	updateCart,
-	checkout
+	customerData,
+	checkout,
+	loginUser,
+	loggedinUserTimeUp,
+	changeCustomerProperties,
+	registerUser,
+	cartLayerInitialized
 } from './actions';
 
 const setQuery = (history, query) => {
@@ -39,6 +45,24 @@ export const mapDispatchToProps = (dispatch, ownProps) => {
 		},
 		updateCart: (data, callback) => {
 			dispatch(updateCart(data, callback));
+		},
+		loginUser: (data, callback) => {
+			dispatch(loginUser(data, callback));
+		},
+		loggedinUserTimeUp: (data, callback) => {
+			dispatch(loggedinUserTimeUp(data, callback));
+		},
+		changeCustomerProperties: (data, callback) => {
+			dispatch(changeCustomerProperties(data, callback));
+		},
+		customerData: (data, callback) => {
+			dispatch(customerData(data, callback));
+		},
+		registerUser: (data, callback) => {
+			dispatch(registerUser(data, callback));
+		},
+		cartLayerInitialized: (data, callback) => {
+			dispatch(cartLayerInitialized(data, callback));
 		},
 		checkout: data => {
 			dispatch(checkout(data, ownProps.history));

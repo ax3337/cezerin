@@ -26,8 +26,7 @@ export default class LoginForm extends React.Component {
 			isFetching: false,
 			isAuthorized: false,
 			emailIsSent: false,
-			error: null,
-			password: null
+			error: null
 		};
 	}
 
@@ -158,7 +157,7 @@ export default class LoginForm extends React.Component {
 							</Button>
 						</div>
 						<Button>
-							<Link to="/admin/registration">{messages.registrationTitle}</Link>
+							<Link to="/admin/signup">{messages.signupTitle}</Link>
 						</Button>
 						{response}
 					</Paper>

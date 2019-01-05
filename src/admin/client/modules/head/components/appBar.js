@@ -53,7 +53,7 @@ export default class AppBarTop extends React.Component {
 		if (
 			pathname === '/admin/login' ||
 			pathname === '/admin/logout' ||
-			pathname === '/admin/registration' ||
+			pathname === '/admin/signup' ||
 			pathname === '/admin/recovery'
 		) {
 			return null;
@@ -77,6 +77,31 @@ export default class AppBarTop extends React.Component {
 				title = (
 					<span>
 						{messages.products_title}
+						<FontIcon
+							style={{ top: 6 }}
+							color="#fff"
+							className="material-icons"
+						>
+							chevron_right
+						</FontIcon>
+						{productCategoryName}
+					</span>
+				);
+			}
+
+			if (productsSelectedCount > 0) {
+				title = `${productsSelectedCount} ${messages.selected}`;
+			}
+
+			rightElements = <ProductsHead />;
+		}
+		if (pathname === '/admin/products/import') {
+			title = messages.drawer_importing;
+
+			if (productCategoryName) {
+				title = (
+					<span>
+						{messages.drawer_importing}
 						<FontIcon
 							style={{ top: 6 }}
 							color="#fff"

@@ -4,11 +4,12 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Head from 'modules/head';
 import Login from 'routes/login';
 import Logout from 'routes/logout';
-import Registration from 'routes/registration';
+import Signup from 'routes/signup';
 import Recovery from 'routes/recovery';
 import Home from 'routes/home';
 import NotFound from 'routes/notFound';
 import Products from 'routes/products';
+import ProductImport from 'routes/products/import';
 import ProductDetails from 'routes/products/edit';
 import ProductCategories from 'routes/products/categories';
 import Customers from 'routes/customers';
@@ -70,10 +71,11 @@ export default () => (
 					<Switch>
 						<Route path="/admin/" exact component={Home} />
 						<Route path="/admin/login" component={Login} />
-						<Route path="/admin/registration" component={Registration} />
+						<Route path="/admin/signup" component={Signup} />
 						<Route path="/admin/recovery" component={Recovery} />
 						<Route path="/admin/logout" component={Logout} />
 						<Route path="/admin/products" exact component={Products} />
+						<Route path="/admin/products/import" component={ProductImport} />
 						<Route
 							path="/admin/products/categories"
 							exact
