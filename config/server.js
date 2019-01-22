@@ -8,7 +8,7 @@ const dbCred =
 	dbUser.length > 0 || dbPass.length > 0 ? `${dbUser}:${dbPass}@` : '';
 
 const dbUrl =
-	process.env.DB_URL || `mongodb://${dbCred}${dbHost}:${dbPort}/${dbName}`;
+	process.env.DB_URL || `mongodb://<dbuser>:<dbpassword>@ds157834.mlab.com:57834/heroku_qm639qcq`;
 
 module.exports = {
 	// used by Store (server side)
@@ -30,13 +30,13 @@ module.exports = {
 	mongodbServerUrl: dbUrl,
 
 	smtpServer: {
-		host: '',
-		port: 0,
+		host: 'email-smtp.us-west-2.amazonaws.com',
+		port: 465,
 		secure: true,
-		user: '',
-		pass: '',
-		fromName: '',
-		fromAddress: ''
+		user: 'AKIAI3WRGJJPXZ3WPUXQ',
+		pass: 'Aoiw4TTPMAwQZ8jJ5GRDHyepkzV1pHaNtRn3I9bPgknL',
+		fromName: 'ax3337',
+		fromAddress: 'ax3337@gmail.com'
 	},
 
 	// key to sign tokens
