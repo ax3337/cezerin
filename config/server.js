@@ -8,7 +8,7 @@ const dbCred =
 	dbUser.length > 0 || dbPass.length > 0 ? `${dbUser}:${dbPass}@` : '';
 
 const dbUrl =
-	process.env.DB_URL || `mongodb://<dbuser>:<dbpassword>@ds157834.mlab.com:57834/heroku_qm639qcq`;
+	process.env.DB_URL || `mongodb://<dbUser>:<dbPass>@ds157834.mlab.com:57834/heroku_qm639qcq`;
 
 module.exports = {
 	// used by Store (server side)
