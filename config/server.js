@@ -1,13 +1,12 @@
-// config used by server side only
-const dbHost = process.env.DB_HOST || '127.0.0.1';
+const dbHost = process.env.DB_HOST || '127.0.0.1';//'3.120.128.121';//'172.31.46.35';'188.192.40.34';//'127.0.0.1';
 const dbPort = process.env.DB_PORT || 27017;
-const dbName = process.env.DB_NAME || 'shop';
-const dbUser = process.env.DB_USER || 'heroku_qm639qcq';
-const dbPass = process.env.DB_PASS || '4m4R8g8fkKHxPMw';
+const dbName = process.env.DB_NAME || 'shop';//'admin';
+const dbUser = process.env.DB_USER || '';//'admin';
+const dbPass = process.env.DB_PASS || '';//'admin123';
 const dbCred =
 	dbUser.length > 0 || dbPass.length > 0 ? `${dbUser}:${dbPass}@` : '';
 
-const dbUrl = `mongodb://heroku_qm639qcq:4m4R8g8fkKHxPMw@ds157834.mlab.com:57834/heroku_qm639qcq`;
+const dbUrl =  'mongodb://userDB:123456Qq@ds157834.mlab.com:57834/heroku_qm639qcq';
 
 module.exports = {
 	// used by Store (server side)
